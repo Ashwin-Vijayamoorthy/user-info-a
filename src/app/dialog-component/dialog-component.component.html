@@ -1,0 +1,9 @@
+<!-- <p>dialog-component works!</p> -->
+<h1 mat-dialog-title>Delete</h1>
+<div mat-dialog-content>
+  <p>Would you like to delete this data?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Yes</button>
+  <button mat-button (click)="dialogRef.close()">No</button>
+</div>

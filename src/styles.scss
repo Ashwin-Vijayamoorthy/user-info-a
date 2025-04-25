@@ -1,0 +1,141 @@
+// // Custom Theming for Angular Material
+// // For more information: https://material.angular.io/guide/theming
+// @use '@angular/material' as mat;
+// // Plus imports for other components in your app.
+
+// // Include the common styles for Angular Material. We include this here so that you only
+// // have to load a single css file for Angular Material in your app.
+// // Be sure that you only ever include this mixin once!
+// @include mat.core();
+
+// // Define the theme object.
+// $systemuserinfo-theme: mat.define-theme((
+//   color: (
+//     theme-type: light,
+//     primary: mat.$azure-palette,
+//     tertiary: mat.$blue-palette,
+//   ),
+//   density: (
+//     scale: 0,
+//   )
+// ));
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// :root {
+//   @include mat.all-component-themes($systemuserinfo-theme);
+// }
+
+// // Comment out the line below if you want to use the pre-defined typography utility classes.
+// // For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// // @include mat.typography-hierarchy($systemuserinfo-theme);
+
+// // Comment out the line below if you want to use the deprecated `color` inputs.
+// // @include mat.color-variants-backwards-compatibility($systemuserinfo-theme);
+// /* You can add global styles to this file, and also import other style files */
+// @use '@angular/material' as mat;
+
+// $theme: mat.define-theme((
+//   color: (
+//     theme-type: light,
+//     primary: mat.$azure-palette,
+//     tertiary: mat.$blue-palette,
+//   )
+// ));
+
+// body {
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+//   margin: 0;
+//   padding: 30px;
+//   height: 100%;
+
+//   @include mat.all-component-themes($theme);
+// }
+
+// html {
+//   height: 100%;
+// }
+
+// @include mat.core();
+// @include mat.color-variants-backwards-compatibility($theme);
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// s-compatibility($theme);
+// s-compatibility($theme);
+// s-compatibility($theme);
+// s-compatibility($theme);
+
+@use "@angular/material" as mat;
+
+$theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+  )
+);
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 30px;
+  height: 100%;
+  background-color: #e0ffef;
+
+  @include mat.all-component-themes($theme);
+}
+
+html {
+  height: 100%;
+}
+.text-center {
+  text-align: center !important;
+}
+
+.text-end {
+  text-align: right !important;
+}
+
+.text-start {
+  text-align: left !important;
+}
+
+#toast-container {
+  .toast {
+    background-color: #323232 !important; /* Change background color */
+    color: white !important; /* Change text color */
+    font-size: 16px !important; /* Change font size */
+    border-radius: 8px !important; /* Rounded corners */
+    padding: 15px !important; /* Padding */
+  }
+
+  /* Customize Success Toastr */
+  .toast-success {
+    background-color: #4caf50 !important; /* Green background for success */
+    border-left: 5px solid #388e3c !important; /* Custom left border for success */
+  }
+
+  /* Customize Error Toastr */
+  .toast-error {
+    background-color: #f44336 !important; /* Red background for error */
+    border-left: 5px solid #d32f2f !important; /* Custom left border for error */
+  }
+
+  /* Customize Warning Toastr */
+  .toast-warning {
+    background-color: #ff9800 !important; /* Orange background for warning */
+    border-left: 5px solid #f57c00 !important; /* Custom left border for warning */
+  }
+
+  /* Customize Info Toastr */
+  .toast-info {
+    background-color: #2196f3 !important; /* Blue background for info */
+    border-left: 5px solid #1976d2 !important; /* Custom left border for info */
+  }
+}
+@include mat.core();
+@include mat.color-variants-backwards-compatibility($theme);
